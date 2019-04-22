@@ -1,6 +1,6 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { BrowserRouter ,Route} from 'react-router-dom';
+import { HashRouter ,Route} from 'react-router-dom';
 // import PropTypes from "prop-types";
 import HomePage from "./HomePage/HomePage";
 // import { APP_DIRECTORY, APP_URL, ERROR_403_PAGE } from "../config";
@@ -15,13 +15,13 @@ class Router extends React.Component {
 
 	public render() {
 		return (
-			<BrowserRouter >
+			<HashRouter basename="/" >
 				<div>
 					<Route path="/" exact={true} component={HomePage} />
 					{this.userMiddleware()}
 					{this.guestMiddleware()}
 				</div>
-			</BrowserRouter>
+			</HashRouter>
 		);
 	}
 

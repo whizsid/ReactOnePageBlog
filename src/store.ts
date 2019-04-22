@@ -1,12 +1,16 @@
-import { applyMiddleware,createStore } from "redux";
+import { applyMiddleware,createStore, Middleware } from "redux";
 import { createLogger } from "redux-logger";
 import thunk from "redux-thunk";
+import { APP_LOGGER_ON } from './config';
 import rootReducer from "./rootReducer";
 
-const createStoreWithMiddleware = applyMiddleware(
-	createLogger(),
-	thunk,
-)(createStore);
+let middleware: Middleware[] = [thunk];
+
+if(APP_LOGGER_ON){
+	middleware = [...middleware,createLogger()];
+}
+
+const createStoreWithMiddleware = applyMiddleware(...middleware)(createStore);
 
 
 export default createStoreWithMiddleware(rootReducer);

@@ -1,6 +1,7 @@
 import withStyles from '@material-ui/core/styles/withStyles';
 import * as React from 'react';
-import Header from './Header/Header';
+import Drawer from './Layout/Drawer';
+import Header from './Layout/Header';
 
 const styles = withStyles(()=>({
 	app:{
@@ -24,6 +25,7 @@ class Layout extends React.Component<IProps>{
 		return (
 			<div className={classes.app} >
 				<Header/>
+				<Drawer/>
 				{children}
 			</div>
 		)
