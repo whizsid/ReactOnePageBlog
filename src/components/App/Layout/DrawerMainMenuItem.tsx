@@ -7,14 +7,8 @@ import {connect} from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { AppState } from 'src/rootReducer';
 import { collapseMenu, expandMenu, fetchMenuItems } from 'src/store/Layout/actions';
-import laravelcon from '../../../resources/laravel.svg';
-import reactIcon from '../../../resources/react.svg';
+import drawerIcons from '../../../constants/drawerIcons';
 import {DrawerMenuItem} from './DrawerMenuItem';
-
-const drawerIcons = {
-	laravel:laravelcon,
-	react:reactIcon
-}
 
 const styles = withStyles(({spacing})=>({
 	icon:{

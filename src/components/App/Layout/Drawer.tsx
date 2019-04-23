@@ -32,17 +32,14 @@ const styles = withStyles(({ transitions, spacing, breakpoints }) => ({
 			duration: transitions.duration.leavingScreen,
 			easing: transitions.easing.sharp,
 		}),
-		width: spacing.unit * 10 + 1,
-		[breakpoints.up('sm')]: {
-			width: spacing.unit * 11 + 1,
-		},
+		width: spacing.unit * 10 + 1
 	},
 	drawerOpen: {
 		transition: transitions.create('width', {
 			duration: transitions.duration.enteringScreen,
 			easing: transitions.easing.sharp,
 		}),
-		width: drawerWidth,
+		width: drawerWidth
 	},
 	paper:{
 		background:"#606060",

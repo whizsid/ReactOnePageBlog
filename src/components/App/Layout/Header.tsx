@@ -5,6 +5,8 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import * as React from 'react';
+import LoadingBar from 'react-redux-loading-bar'
+import {Link} from 'react-router-dom';
 import facebookIcon from "../../../resources/facebook.svg";
 import githubIcon from "../../../resources/github.svg";
 import logo from "../../../resources/logo.svg";
@@ -59,9 +61,12 @@ class Header extends React.Component<IProps>{
 		return(
 			<div>
 				<AppBar className={classes.root} position="fixed" color="primary" >
+					<LoadingBar/>
 					<Toolbar variant="dense">
 						<Avatar className={classes.avatar} >
-							<img width="100%" src={logo} alt="WhizSid logo transparent cobra snake python kali linux s-letter WS"/>
+							<Link to="/">
+								<img width="100%" src={logo} alt="WhizSid logo transparent cobra snake python kali linux s-letter WS"/>
+							</Link>
 						</Avatar>
 						<Typography className={classes.brandName} variant="h5" align="center">WhizSid</Typography>
 						<div className={classes.grow}/>

@@ -1,10 +1,11 @@
+import { loadingBarMiddleware } from 'react-redux-loading-bar';
 import { applyMiddleware,createStore, Middleware } from "redux";
 import { createLogger } from "redux-logger";
 import thunk from "redux-thunk";
 import { APP_LOGGER_ON } from './config';
 import rootReducer from "./rootReducer";
 
-let middleware: Middleware[] = [thunk];
+let middleware: Middleware[] = [thunk,loadingBarMiddleware()];
 
 if(APP_LOGGER_ON){
 	middleware = [...middleware,createLogger()];
