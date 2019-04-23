@@ -61,20 +61,20 @@ export default (state = initialState, action: LayoutActionTypes): ILayoutState =
 			const menuItemsE = state.menuItems;
 			return {
 				...state,
-				menuItems:updateDeeply(menuItemsE,action.path+".expanded",true)
+				menuItems:updateDeeply(menuItemsE,action.path.split('.').join('.childrens.')+".expanded",true)
 			};
 		case COLLAPSED_ITEM:
 			const menuItemsC = state.menuItems;
 			return {
 				...state,
-				menuItems:updateDeeply(menuItemsC,action.path+".expanded",false)
+				menuItems:updateDeeply(menuItemsC,action.path.split('.').join('.childrens.')+".expanded",false)
 			};
 		case MENU_ITEM_LOADED:
-			const menuItemsL = updateDeeply(state.menuItems,action.path+".childrens",action.items);
+			const menuItemsL = updateDeeply(state.menuItems,action.path.split('.').join('.childrens.')+".childrens",action.items);
 
 			return {
 				...state,
-				menuItems:updateDeeply(menuItemsL,action.path+".loaded",true)
+				menuItems:updateDeeply(menuItemsL,action.path.split('.').join('.childrens.')+".loaded",true)
 			};
 		case APP_SUCCESS_SNACK:
 			return generateSnackState(state, action, "success");

@@ -16,8 +16,8 @@ const request = (url:string,config=undefined)=>axios.get(APP_URL+"data/"+url,con
 }));
 
 const Layout = {
-	mainMenuItem:()=>request("sidebar/index.json"),
-	menuItem:(path:string)=>request("sidebar/"+path.replace(".","/")+"/index.json")
+	mainMenuItem:()=>request("posts/index.json"),
+	menuItem:(path:string)=>request("posts/"+path.replace(".","/")+"/index.json")
 };
 
 export default {

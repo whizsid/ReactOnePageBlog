@@ -8,6 +8,7 @@ import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { ThunkDispatch } from 'redux-thunk';
 import { AppState } from 'src/rootReducer';
 import { collapseMenu, expandMenu, fetchMenuItems } from 'src/store/Layout/actions';
@@ -38,7 +39,7 @@ export class DrawerMenuItem extends React.Component<IProp> {
 
 		return (
 			<React.Fragment>
-				<ListItem divider={true} href={typeof link !== 'undefined' ? link : undefined} dense={true} >
+				<ListItem component={typeof link !== 'undefined' ?props=>(<Link to={link} {...props} />):undefined} button={typeof link !== 'undefined'} divider={true} dense={true} >
 					<ListItemText primary={title} />
 					{this.renderExpandIcon()}
 				</ListItem>

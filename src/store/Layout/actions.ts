@@ -85,7 +85,7 @@ export const loadedMenu = (path:string,items:IMenuItems):IMenuItemLoadedAction=>
 });
 
 export const fetchMenuItems = (path:string):ThunkAction<Promise<void>, {}, {}, AnyAction> => async (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
-	agent.Layout.menuItem(path).then(({success,message,items})=>{
+	agent.Layout.menuItem(path.split('.').join('/')).then(({success,message,items})=>{
 		if (success) {
 			const modedItems = {};
 
