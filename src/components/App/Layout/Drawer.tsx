@@ -17,6 +17,10 @@ import DrawerMainMenuItem from './DrawerMainMenuItem';
 const drawerWidth = 240;
 
 const styles = withStyles(({ transitions, spacing, breakpoints }) => ({
+	chevron:{
+		margin:spacing.unit,
+		padding:0,
+	},
 	drawer: {
 		flexShrink: 0,
 		whiteSpace: 'nowrap',
@@ -28,9 +32,9 @@ const styles = withStyles(({ transitions, spacing, breakpoints }) => ({
 			duration: transitions.duration.leavingScreen,
 			easing: transitions.easing.sharp,
 		}),
-		width: spacing.unit * 7 + 1,
+		width: spacing.unit * 10 + 1,
 		[breakpoints.up('sm')]: {
-			width: spacing.unit * 9 + 1,
+			width: spacing.unit * 11 + 1,
 		},
 	},
 	drawerOpen: {
@@ -42,8 +46,8 @@ const styles = withStyles(({ transitions, spacing, breakpoints }) => ({
 	},
 	paper:{
 		background:"#606060",
-		paddingTop: spacing.unit * 8,
-	},
+		paddingTop: spacing.unit * 12,
+	}
 }));
 
 const mapStateToProps = (state: AppState) => ({
@@ -60,6 +64,7 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>) => ({
 
 interface IProps {
 	classes: {
+		chevron:string,
 		drawer: string,
 		drawerOpen: string,
 		drawerClose: string,
@@ -129,17 +134,17 @@ class Drawer extends React.Component<IProps> {
 	}
 
 	protected renderChevronIcon() {
-		const { drawerOpen, onOpenDrawer } = this.props;
+		const { drawerOpen, onOpenDrawer,classes } = this.props;
 
 		if (drawerOpen) {
 			return (
-				<IconButton onClick={this.closeDrawer}>
+				<IconButton className={classes.chevron} onClick={this.closeDrawer}>
 					<ChevronLeftIcon />
 				</IconButton>
 			);
 		} else {
 			return (
-				<IconButton onClick={onOpenDrawer}>
+				<IconButton className={classes.chevron} onClick={onOpenDrawer}>
 					<ChevronRightIcon />
 				</IconButton>
 			)

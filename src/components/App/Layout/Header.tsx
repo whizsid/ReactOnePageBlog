@@ -17,17 +17,18 @@ const styles = withStyles(({spacing})=>({
 			borderRadius: spacing.unit,
 			height: spacing.unit*12,
 			marginLeft:-spacing.unit,
+			top:0,
 			width: spacing.unit*12,
 		},
 		background:"#fff",
 		left: spacing.unit,
 		marginLeft:spacing.unit*2,
 		position: "fixed",
-		top: spacing.unit*1.5,
+		top: spacing.unit,
 		transitionDuration:".5s",
 	},
 	brandName:{
-		marginLeft:spacing.unit*10
+		marginLeft:spacing.unit*12
 	},
 	grow:{
 		flexGrow:1
@@ -58,7 +59,7 @@ class Header extends React.Component<IProps>{
 		return(
 			<div>
 				<AppBar className={classes.root} position="fixed" color="primary" >
-					<Toolbar>
+					<Toolbar variant="dense">
 						<Avatar className={classes.avatar} >
 							<img width="100%" src={logo} alt="WhizSid logo transparent cobra snake python kali linux s-letter WS"/>
 						</Avatar>
