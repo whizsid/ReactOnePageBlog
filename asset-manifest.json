@@ -1,10 +1,12 @@
 {
-  "main.css": "static/css/main.29266132.css",
-  "main.css.map": "static/css/main.29266132.css.map",
-  "main.js": "static/js/main.1ab65e3f.js",
-  "main.js.map": "static/js/main.1ab65e3f.js.map",
-  "static/media/facebook.svg": "static/media/facebook.a52c2470.svg",
-  "static/media/github.svg": "static/media/github.617870e4.svg",
+  "main.css": "static/css/main.00ac8478.css",
+  "main.css.map": "static/css/main.00ac8478.css.map",
+  "main.js": "static/js/main.580c1af0.js",
+  "main.js.map": "static/js/main.580c1af0.js.map",
+  "static/media/facebook.svg": "static/media/facebook.9e8a7612.svg",
+  "static/media/github.svg": "static/media/github.e0475f7e.svg",
+  "static/media/laravel.svg": "static/media/laravel.658dd975.svg",
   "static/media/logo.svg": "static/media/logo.7f8d61c0.svg",
-  "static/media/twitter.svg": "static/media/twitter.be066898.svg"
+  "static/media/react.svg": "static/media/react.d08917c3.svg",
+  "static/media/twitter.svg": "static/media/twitter.865303d1.svg"
 }
