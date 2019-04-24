@@ -7,10 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import * as React from 'react';
 import LoadingBar from 'react-redux-loading-bar'
 import {Link} from 'react-router-dom';
-import facebookIcon from "../../../resources/facebook.svg";
 import githubIcon from "../../../resources/github.svg";
 import logo from "../../../resources/logo.svg";
-import twitterIcon from "../../../resources/twitter.svg";
 
 const styles = withStyles(({spacing})=>({
 	avatar:{
@@ -70,12 +68,6 @@ class Header extends React.Component<IProps>{
 						</Avatar>
 						<Typography className={classes.brandName} variant="h5" align="center">WhizSid</Typography>
 						<div className={classes.grow}/>
-						<IconButton href="https://facebook.com/Prince.Of.SL" >
-							<img className={ classes.iconButtonImg}  width="100%" src={facebookIcon} alt="Facebook icon transparent svg"/>
-						</IconButton>
-						<IconButton href="https://twitter.com/@shirty_boy" >
-							<img className={ classes.iconButtonImg}  width="100%" src={twitterIcon} alt="Twitter icon transparent svg"/>
-						</IconButton>
 						<IconButton href="https://github.com/whizsid" >
 							<img className={ classes.iconButtonImg}  width="100%" src={githubIcon} alt="Github icon transparent svg"/>
 						</IconButton>

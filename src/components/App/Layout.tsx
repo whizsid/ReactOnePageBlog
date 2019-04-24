@@ -20,6 +20,7 @@ const styles = withStyles(({spacing})=>({
 		paddingLeft:240+(spacing.unit*2)
 	},
 	wrapper:{
+		paddingRight:spacing.unit*4,
 		paddingTop:spacing.unit*14,
 	}
 }));
