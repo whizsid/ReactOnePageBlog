@@ -1,12 +1,12 @@
 {
 	"items":{
 		"react":{
-			"icon":"react",
+			"icon":"react.svg",
 			"title":"React JS",
 			"description":"React JS is a modern MVC framework to build real time UIs."
 		},
 		"laravel":{
-			"icon":"laravel",
+			"icon":"laravel.svg",
 			"title":"Laravel",
 			"description":"Laravel is a open source server side MVC framework with many features."
 		}
