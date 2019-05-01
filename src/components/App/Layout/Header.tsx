@@ -1,5 +1,6 @@
 import AppBar from '@material-ui/core/AppBar';
 import Avatar from '@material-ui/core/Avatar';
+import red from '@material-ui/core/colors/red';
 import IconButton from '@material-ui/core/IconButton';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -36,6 +37,12 @@ const styles = withStyles(({spacing})=>({
 	iconButtonImg:{
 		maxWidth:spacing.unit*4
 	},
+	loadingBar:{
+		background:red[600],
+		height:spacing.unit,
+		position:"fixed",
+		zIndex:5000,
+	},
 	root:{
 		zIndex:1500
 	}
@@ -48,6 +55,7 @@ interface IProps {
 		iconButtonImg:string,
 		root:string,
 		grow:string,
+		loadingBar:string
 	}
 };
 
@@ -58,8 +66,8 @@ class Header extends React.Component<IProps>{
 
 		return(
 			<div>
+				<LoadingBar className={classes.loadingBar} />
 				<AppBar className={classes.root} position="fixed" color="primary" >
-					<LoadingBar/>
 					<Toolbar variant="dense">
 						<Avatar className={classes.avatar} >
 							<Link to="/">

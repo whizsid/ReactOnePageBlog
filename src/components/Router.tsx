@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { HashRouter ,Route} from 'react-router-dom';
 // import PropTypes from "prop-types";
 import HomePage from "./HomePage/HomePage";
+import Post from './Post/Post';
 // import { APP_DIRECTORY, APP_URL, ERROR_403_PAGE } from "../config";
 
 const mapStateToProps = () => ({
@@ -18,6 +19,7 @@ class Router extends React.Component {
 			<HashRouter basename="/" >
 				<div>
 					<Route path="/" exact={true} component={HomePage} />
+					<Route path="/post/*" exact={true} component={Post}/>
 					{this.userMiddleware()}
 					{this.guestMiddleware()}
 				</div>

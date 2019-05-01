@@ -6,7 +6,6 @@ import theme from 'src/theme';
 import Router from '../Router';
 import './App.css';
 
-
 class App extends React.Component {
 	public render() {
 

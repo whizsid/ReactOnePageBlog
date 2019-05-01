@@ -1,4 +1,4 @@
-
+import {hideLoading,showLoading} from 'react-redux-loading-bar';
 import { AnyAction } from 'redux';
 import { ThunkAction, ThunkDispatch } from 'redux-thunk';
 import agent from '../../agent';
@@ -44,7 +44,9 @@ export const loadedMainMenu = (items: IMainMenuItems): IMainMenuItemLoadedAction
 });
 
 export const fetchMainMenuItems = (): ThunkAction<Promise<void>, {}, {}, AnyAction> => async (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
+	dispatch(showLoading())
 	agent.Layout.mainMenuItem().then(({ success, message, items }) => {
+		dispatch(hideLoading());
 		if (success) {
 			const modedItems = {};
 
@@ -59,7 +61,6 @@ export const fetchMainMenuItems = (): ThunkAction<Promise<void>, {}, {}, AnyActi
 					};
 				}
 			}
-
 			dispatch(loadedMainMenu(modedItems));
 		}
 		else {
@@ -85,7 +86,9 @@ export const loadedMenu = (path:string,items:IMenuItems):IMenuItemLoadedAction=>
 });
 
 export const fetchMenuItems = (path:string):ThunkAction<Promise<void>, {}, {}, AnyAction> => async (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
+	dispatch(showLoading())
 	agent.Layout.menuItem(path.split('.').join('/')).then(({success,message,items})=>{
+		dispatch(hideLoading());
 		if (success) {
 			const modedItems = {};
 

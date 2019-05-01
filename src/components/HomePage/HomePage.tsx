@@ -17,7 +17,6 @@ const styles = withStyles(({spacing,palette})=>({
 		minHeight:300
 	},
 	breadcrumbButton:{
-		background:palette.grey[700],
 		fontSize:'1em',
 		margin:spacing.unit*2,
 		marginBottom:spacing.unit*10,
@@ -70,7 +69,7 @@ class HomePage extends React.Component<IProp> {
 						<Typography className={classes.breadcrumbFooter} variant="body1" align="center">
 							මෙහි ඇති සියලුම ලිපි හා කේත උපුටා ගැනීම හා වෙනත් තැන් වල පළ කිරීමේ අයිතිය ඔබ සතු වන අතර කරුණාකාර යුතුකමක් ලෙස හැකි සෑම විටම කතෘ අයිතිය සුරකින්න.
 						</Typography>
-						<Typography align="center" variant="title">
+						<Typography align="center" variant="body1">
 							නවතම පිටපත  0.1v
 						</Typography>
 					</Grid>

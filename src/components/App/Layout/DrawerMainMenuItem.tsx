@@ -7,7 +7,6 @@ import {connect} from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { AppState } from 'src/rootReducer';
 import { collapseMenu, expandMenu, fetchMenuItems } from 'src/store/Layout/actions';
-import drawerIcons from '../../../constants/drawerIcons';
 import {DrawerMenuItem} from './DrawerMenuItem';
 
 const styles = withStyles(({spacing})=>({
@@ -54,7 +53,7 @@ class DrawerMainMenuItem extends DrawerMenuItem {
 
 		return (
 			<ListItemIcon>
-				<img className={classes.icon} src={drawerIcons[icon]}/>
+				<img className={classes.icon} src={"/data/resources/menuIcons/"+icon}/>
 			</ListItemIcon>
 		)
 	}

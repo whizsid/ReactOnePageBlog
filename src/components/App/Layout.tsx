@@ -41,6 +41,8 @@ const mapStateToProps = (state: AppState) => ({
 });
 
 class Layout extends React.Component<IProps>{
+
+	
 	public render(){
 		const {children,classes,drawerOpen} = this.props;
 

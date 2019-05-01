@@ -1,0 +1,24 @@
+{
+	"time":"2019-04-05 22:34:00",
+	"next":{
+		"title":"Next Page",
+		"link":"/post/react/beginner/second"
+	},
+	"previous":{
+		"title":"Previous Page",
+		"link":"/post/react/beginner/start"
+	},
+	"writers":[
+		{
+			"name":"WhizSid",
+			"username":"whizsid",
+			"avatar":"whizsid.png"
+		}
+	],
+	"seeAlso":[
+		{
+			"title":"Second Page",
+			"link":"/post/react/beginner/start"
+		}
+	]
+}
