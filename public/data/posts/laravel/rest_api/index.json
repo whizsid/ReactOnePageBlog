@@ -1,0 +1,9 @@
+{
+	"items":{
+		"passport_installation":{
+			"title":"Passport ස්ථාපනය කරගමු",
+			"description":"passport ස්ථාපනය කරගැනීම, ඒ සදහා ව්‍යාපෘතිය සැකසීම.",
+			"link":"/post/laravel/rest_api/passport_installation"
+		}
+	}
+}

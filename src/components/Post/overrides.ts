@@ -7,16 +7,17 @@ import ListItemWithTypography from './ListItemWithTypography';
 import MySyntaxHighlighter from './SyntaxHighlighter';
 
 export default {
+	WSCode:{
+		component:MySyntaxHighlighter
+	},
 	a:{
 		component:Link
-	},
-	code:{
-		component:MySyntaxHighlighter
 	},
 	h1:{
 		component: Typography,
 		props:{
 			align:"center",
+			className:"title",
 			variant:"h4",
 		}
 	},
@@ -24,13 +25,15 @@ export default {
 		component: Typography,
 		props:{
 			align:"left",
-			variant:"h5"
+			className:"title",
+			variant:"h5",
 		}
 	},
 	h3:{
 		component: Typography,
 		props:{
 			align:"left",
+			className:"title",
 			variant:"h6",
 		}
 	},
@@ -52,5 +55,5 @@ export default {
 		props:{
 			dense:true
 		}
-	}
+	},
 };
