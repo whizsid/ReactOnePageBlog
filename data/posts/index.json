@@ -8,7 +8,7 @@
 		"laravel":{
 			"icon":"laravel.svg",
 			"title":"Laravel",
-			"description":"Laravel is a open source server side MVC framework with many features."
+			"description":"Laravel යනු නවීන MVC framework එකකි. මෙය යොදා ගැනීමෙන් ඔබගේ වෙබ් අඩවි ඉතා ඉක්මණින් හා කාර්යකෂම ලෙස සදා ගැනීමට හැකියාව ලැබේ."
 		}
 	}
 }
