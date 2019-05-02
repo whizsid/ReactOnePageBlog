@@ -63,8 +63,10 @@ export const APP_SUCCESS_SNACK ='APP_SUCCESS_SNACK';
 export const APP_ERROR_SNACK = 'APP_ERROR_SNACK';
 export const APP_CONFIRM_SNACK = 'APP_CONFIRM_SNACK';
 export const APP_INFO_SNACK = 'APP_INFO_SNACK';
+export const APP_CLOSE_SNACK = 'APP_CLOSE_SNACK';
 
 export interface ISnack {
+	index:number,
 	message: string,
 	onConfirm?:() => void,
 	onCancel?:() => void,
@@ -101,11 +103,16 @@ export interface IConfirmSnackAction extends IBaseSnackAction {
 	type: typeof APP_CONFIRM_SNACK
 }
 
+export interface ICloseSnackAction {
+	snack:ISnack,
+	type:typeof APP_CLOSE_SNACK,
+};
 
 export interface ILayoutState {
 	drawerOpen:boolean,
 	menuItems:IMainMenuItems,
-	snacks:ISnack[]
+	nextSnackIndex:number,
+	snacks:ISnack[],
 }
 
 export type LayoutActionTypes =
@@ -119,4 +126,5 @@ export type LayoutActionTypes =
 	IConfirmSnackAction |
 	IExpandMenuAction |
 	ICollapseMenuAction |
-	IMenuItemLoadedAction;
+	IMenuItemLoadedAction |
+	ICloseSnackAction;

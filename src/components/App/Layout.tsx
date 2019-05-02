@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import { AppState } from 'src/rootReducer';
 import Drawer from './Layout/Drawer';
 import Header from './Layout/Header';
+import Snacks from './Layout/Snacks';
 
 const styles = withStyles(({spacing})=>({
 	app:{
@@ -50,6 +51,7 @@ class Layout extends React.Component<IProps>{
 			<div className={classes.app} >
 				<Header/>
 				<Drawer/>
+				<Snacks/>
 				<div className={classNames(drawerOpen?classes.drawerOpen:classes.drawerClose,classes.wrapper)} >
 					{children}
 				</div>

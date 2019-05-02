@@ -1,5 +1,6 @@
 import { set } from 'lodash';
 import {
+	APP_CLOSE_SNACK,
 	APP_CONFIRM_SNACK,
 	APP_ERROR_SNACK,
 	APP_INFO_SNACK,
@@ -19,22 +20,25 @@ import {
 const initialState: ILayoutState = {
 	drawerOpen: false,
 	menuItems: {},
-	snacks: []
+	nextSnackIndex:0,
+	snacks: [],
 };
 
 const generateSnackState = (state: ILayoutState, action: IBaseSnackAction, type: "error" | "success" | "warning" | "info" | "confirm"): ILayoutState => (
 	{
 		...state,
+		nextSnackIndex:state.nextSnackIndex+1,
 		snacks: [
 			...state.snacks,
 			{
+				index:state.nextSnackIndex,
 				message: action.message,
 				open: true,
 				time: (new Date).getTime(),
 				timeout: action.timeout,
 				type,
 			}
-		]
+		],
 	}
 )
 
@@ -87,9 +91,11 @@ export default (state = initialState, action: LayoutActionTypes): ILayoutState =
 		case APP_CONFIRM_SNACK:
 			return {
 				...state,
+				nextSnackIndex:state.nextSnackIndex+1,
 				snacks: [
 					...state.snacks,
 					{
+						index:state.nextSnackIndex,
 						message: action.message,
 						onCancel:action.onCancel,
 						onConfirm:action.onConfirm,
@@ -98,8 +104,16 @@ export default (state = initialState, action: LayoutActionTypes): ILayoutState =
 						timeout: action.timeout,
 						type:"confirm",
 					}
-				]
+				],
 			};
+		case APP_CLOSE_SNACK:
+			return {
+				...state,
+				snacks:state.snacks.map(snack=>({
+					...snack,
+					open:snack.index ===action.snack.index?false:snack.open
+				}))
+			}
 		default:
 			return state;
 	}

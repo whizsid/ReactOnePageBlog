@@ -3,6 +3,7 @@ import { AnyAction } from 'redux';
 import { ThunkAction, ThunkDispatch } from 'redux-thunk';
 import agent from '../../agent';
 import {
+	APP_CLOSE_SNACK,
 	APP_CONFIRM_SNACK,
 	APP_ERROR_SNACK,
 	APP_INFO_SNACK,
@@ -12,6 +13,7 @@ import {
 	DRAWER_CLOSE,
 	DRAWER_OPEN,
 	EXPANDED_ITEM,
+	ICloseSnackAction,
 	ICollapseMenuAction,
 	IConfirmSnackAction,
 	IDrawerCloseAction,
@@ -23,10 +25,11 @@ import {
 	IMainMenuItems,
 	IMenuItemLoadedAction,
 	IMenuItems,
+	ISnack,
 	ISuccessSnackAction,
 	IWarningSnackAction,
 	MAIN_MENU_ITEM_LOADED,
-	MENU_ITEM_LOADED
+	MENU_ITEM_LOADED,
 } from './types';
 
 
@@ -64,7 +67,7 @@ export const fetchMainMenuItems = (): ThunkAction<Promise<void>, {}, {}, AnyActi
 			dispatch(loadedMainMenu(modedItems));
 		}
 		else {
-			dispatch(errorSnack("Can not fetch menu items. Server Error. Please Refresh again your browser. Error:- " + message));
+			dispatch(errorSnack("ප්‍රධාන මෙනුවට අදාළ අයිතම ලබා ගැනීමට නොහැක. ඔබගේ අන්තර්ජාල සම්බන්ධතාවය නැවත පරීක්ෂා කරන්න."));
 		}
 	})
 }
@@ -108,7 +111,7 @@ export const fetchMenuItems = (path:string):ThunkAction<Promise<void>, {}, {}, A
 			dispatch(expandMenu(path));
 		}
 		else {
-			dispatch(errorSnack("Can not fetch menu items. Server Error. Please Refresh again your browser. Error:- " + message));
+			dispatch(errorSnack("මෙම මෙනුවට අදාළ අයිතම ලබා ගැනීමට නොහැක. ඔබගේ අන්තර්ජාල සම්බන්ධතාවය නැවත පරීක්ෂා කරන්න." ));
 		}
 	})
 }
@@ -143,4 +146,9 @@ export const confirmSnack = (message: string, onCancel: () => void, onConfirm: (
 	onConfirm,
 	timeout,
 	type: APP_CONFIRM_SNACK,
+})
+
+export const closeSnack = (snack:ISnack):ICloseSnackAction=>({
+	snack,
+	type:APP_CLOSE_SNACK,
 })

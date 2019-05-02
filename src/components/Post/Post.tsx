@@ -29,10 +29,11 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>) => ({
 
 const styles = withStyles(({palette,spacing }) => ({
 	block: {
-		background:palette.grey[900],
+		background:palette.grey[700],
 		border:"1px solid "+palette.grey[300],
 		borderBottomRightRadius:spacing.unit,
 		borderTopLeftRadius:spacing.unit,
+		boxShadow:"2px 2px 4px #000",
 		margin:spacing.unit*2,
 		padding:spacing.unit*2,
 		textAlign: "left",

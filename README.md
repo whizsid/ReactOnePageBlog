@@ -22,8 +22,6 @@ npm run start
 
 සියලුම ලිපි markdown කේත ක්‍රමයෙන් ලියවෙන අතර Json කේත ක්‍රමයට මෙනු සඳහා එකතු කිරීම කළ යුතුය. තවද භාෂා භාවිතයේදී හැකිතාක් සිංහල වචන භාවිතා කරන මෙන් ඉල්ලා සිටින අතර එය ආයාසාත්මක වචන වලට පමණක් ඉංග්‍රීසි භාෂාව යොදා ගන්න.(Open your browser -> ඔබගේ  browser එක open කරන්න.) කතෘ භාෂාවම යොදා ගැනීමට අවශ්‍ය නැත. පරිශීලකයාට පහසු භාෂාවක් නිතරම යොදාගන්න.
 
-### මෙනුව සඳහා අයිතම එකතු කර ගැනීම.
-
 ප්‍රධාන මෙනුවෙහි අයිතම ඇත්තේ `./public/data/posts/index.json` ගොණුවහෙි ය.
 ```
 {
@@ -70,6 +68,45 @@ npm run start
 
 සියලුම ලිපි markdown කේත ක්‍රමයෙන් ලිවිය යුතුය.
 
+පිටු සඳහා කතෲන් පිළිබඳ තොරතුරු ඇතුළත් කිරීමේදී `meta/posts/` යන ගොණුව තුළ පෙර පරිදිම ගොණුවක් සකසා ගන්න. උදාහරණයක් ලෙසා ඔබගේ ලිපියෙහි ගොණු ලිපිනය `/public/data/posts/react/beginner/first.md` නම් ඔබගේ කතෘ විස්තර ඇතුළත් කළ යුත්තේ `/public/data/meta/posts/react/beginner/first.json` තුළයි. මෙම json හි නීළ ආකෘතිය පහත දැක්වේ.
+
+```
+
+{
+	"time":"2019-04-05 22:34:00",
+	"next":{
+		"title":"Next Page",
+		"link":"/post/react/beginner/second"
+	},
+	"previous":{
+		"title":"Previous Page",
+		"link":"/post/react/beginner/start"
+	},
+	"writers":[
+		{
+			"name":"WhizSid",
+			"username":"whizsid",
+			"avatar":"whizsid.png"
+		}
+	],
+	"seeAlso":[
+		{
+			"title":"Second Page",
+			"link":"/post/react/beginner/start"
+		}
+	]
+}
+
+```
+
+`time` යනු අවසානයට එම ලිපිය සකස් කළ වේලාවය. මෙය අනිවාර්ය වේ.
+
+`next`  හා `previous` යනු ඊට පෙර පිටුව සහ පසු පිට්වයි.
+
+`writers` යනු මෙය ලිවීමට දායක වූ අයයි. ඔබ කුමක් හෝ සංස්කරණයක් කල පසු මෙය සඳහා ඔබ පිළිබදවද ඇතුළත් කරන්න. `avatar` එක අනිවර්යෙන්ම `/public/data/resources/writerAvatars/` තුළ තිබිය යුතු අතර `filename` එක පමණක් සපයන්න.
+
+`seeAlso` යනු ඒ හා සබැදි වෙනත් පිටුයි.
+
 ## සංවර්ධකයන් සඳහා
 
 අප github pages මගින් මෙය ප්‍රචාරය කරන නිසා server side පරිගණක භාෂා යොදා ගත නොහැකිය. එම නිසා frontend MVC ආකෘතියක් ඇති framework එකක් භාවිතා කිරීමට පෙළඹුණි. 
@@ -81,3 +118,5 @@ npm run start
  - Material UI
  - Axios
  - ESLint
+
+ සෑම විටම ESLint අවවාද නොමැති වන සේ ඔබගේ කේත සකසන්න. ඔබ අප වෙත යොමු කරන සෑම `PR` ක්ම අප පරීකෂා කර ඇතුළත් කරනු ලැබේ. 
