@@ -1,0 +1,18 @@
+{
+	"time":"2019-05-07 01:07:00",
+	"next":{
+		"title":"User ලොගින්වී ඇතිනම් පමණක් ලබා ගැනීම.",
+		"link":"/post/laravel/rest_api/unrequired_login"
+	},
+	"previous":{
+		"title":"Passport ස්ථාපනය කරගමු.",
+		"link":"/post/laravel/rest_api/passport_installation"
+	},
+	"writers":[
+		{
+			"name":"WhizSid",
+			"username":"whizsid",
+			"avatar":"whizsid.png"
+		}
+	]
+}

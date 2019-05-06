@@ -4,6 +4,11 @@
 			"title":"Passport ස්ථාපනය කරගමු",
 			"description":"passport ස්ථාපනය කරගැනීම, ඒ සදහා ව්‍යාපෘතිය සැකසීම.",
 			"link":"/post/laravel/rest_api/passport_installation"
+		},
+		"passport_usage":{
+			"title":"Passport භාවිතය",
+			"description":"passport භාවිතා කිරීම, පරීක්ෂා කරන ආකාරය.",
+			"link":"/post/laravel/rest_api/passport_usage"
 		}
 	}
 }
